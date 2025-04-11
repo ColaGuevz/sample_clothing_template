@@ -1,0 +1,20 @@
+clothing-store/
+├── index.html
+├── shop.html              <-- NEW
+├── learn-more.html        <-- NEW
+├── style.css
+├── script.js
+└── images/
+    ├── hero-background.jpg
+    ├── lookbook-1.jpg
+    ├── lookbook-2.jpg
+    ├── placeholder-product-1.jpg
+    ├── placeholder-product-2.jpg
+    ├── placeholder-product-3.jpg
+    ├── placeholder-product-4.jpg
+    ├── placeholder-product-5.jpg  <-- ADD MORE FOR SHOP PAGE
+    ├── placeholder-product-6.jpg  <-- ADD MORE FOR SHOP PAGE
+    ├── placeholder-product-7.jpg  <-- ADD MORE FOR SHOP PAGE
+    ├── placeholder-product-8.jpg  <-- ADD MORE FOR SHOP PAGE
+    ├── about-banner.jpg         <-- Optional banner for About page (~1920x500)
+    └── logo.png

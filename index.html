@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA Apparel - Modern Fashion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container header-flex">
+            <div class="logo">
+                <!-- <img src="images/logo.png" alt="AURA Apparel Logo"> -->
+                 <a href="#">AURA</a> <!-- Use text if no logo image -->
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="Toggle Navigation">☰</button>
+                <ul>    
+                    <li><a href="#home">Home</a></li>
+                    <a href="shop.html">Shop</a>
+                    <li><a href="#lookbook">Lookbook</a></li>
+                    <a href="learn_more.html">About</a>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content animate-on-scroll fade-in-up">
+                <h1>Define Your Style</h1>
+                <p>Discover curated collections for the modern individual.</p>
+                <a href="#featured" class="btn btn-primary">Shop Collection</a>
+            </div>
+        </section>
+
+        <!-- Featured Products Section -->
+        <section id="featured" class="featured-products container section-padding">
+            <h2 class="section-title animate-on-scroll fade-in">New Arrivals</h2>
+            <div class="product-grid">
+                <!-- Product Card 1 -->
+                <div class="product-card animate-on-scroll fade-in-up" style="--delay: 0.1s;">
+                    <div class="product-image">
+                        <img src="images/placeholder-product-1.jpg" alt="Stylish Black Tee">
+                        <a href="#" class="quick-view">Quick View</a>
+                    </div>
+                    <div class="product-info">
+                        <h3>Essential Crew Neck</h3>
+                        <p class="price">$45.00</p>
+                    </div>
+                </div>
+                <!-- Product Card 2 -->
+                <div class="product-card animate-on-scroll fade-in-up" style="--delay: 0.2s;">
+                    <div class="product-image">
+                        <img src="images/placeholder-product-2.jpg" alt="Comfortable Linen Pants">
+                         <a href="#" class="quick-view">Quick View</a>
+                    </div>
+                    <div class="product-info">
+                        <h3>Relaxed Linen Trouser</h3>
+                        <p class="price">$89.00</p>
+                    </div>
+                </div>
+                <!-- Product Card 3 -->
+                <div class="product-card animate-on-scroll fade-in-up" style="--delay: 0.3s;">
+                    <div class="product-image">
+                        <img src="images/placeholder-product-3.jpg" alt="Minimalist White Sneaker">
+                         <a href="#" class="quick-view">Quick View</a>
+                    </div>
+                    <div class="product-info">
+                        <h3>Minimalist Court Sneaker</h3>
+                        <p class="price">$120.00</p>
+                    </div>
+                </div>
+                <!-- Product Card 4 -->
+                <div class="product-card animate-on-scroll fade-in-up" style="--delay: 0.4s;">
+                    <div class="product-image">
+                        <img src="images/placeholder-product-4.jpg" alt="Classic Denim Jacket">
+                         <a href="#" class="quick-view">Quick View</a>
+                    </div>
+                    <div class="product-info">
+                        <h3>Washed Denim Jacket</h3>
+                        <p class="price">$155.00</p>
+                    </div>
+                </div>
+                <!-- Add more product cards as needed -->
+            </div>
+             <div class="view-all animate-on-scroll fade-in">
+                 <a href="shop.html" class="btn btn-secondary">View All Products</a>
+             </div>
+        </section>
+
+        <!-- Lookbook Section -->
+        <section id="lookbook" class="lookbook section-padding">
+            <div class="container">
+                 <h2 class="section-title text-center animate-on-scroll fade-in">Style Inspiration</h2>
+                 <div class="lookbook-grid">
+                     <div class="lookbook-item animate-on-scroll slide-in-left">
+                         <img src="images/lookbook-1.jpg" alt="Model wearing Aura outfit 1">
+                         <div class="lookbook-caption">
+                             <h4>Urban Edge</h4>
+                             <p>Effortless style for city life.</p>
+                         </div>
+                     </div>
+                     <div class="lookbook-item animate-on-scroll slide-in-right" style="--delay: 0.2s;">
+                         <img src="images/lookbook-2.jpg" alt="Model wearing Aura outfit 2">
+                          <div class="lookbook-caption">
+                             <h4>Weekend Comfort</h4>
+                             <p>Relaxed fits, premium feel.</p>
+                         </div>
+                     </div>
+                 </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-us container section-padding text-center">
+             <h2 class="section-title animate-on-scroll fade-in">Our Philosophy</h2>
+             <p class="animate-on-scroll fade-in-up" style="--delay: 0.1s;">AURA was founded on the belief that clothing should be both beautiful and functional. We focus on quality materials, timeless design, and sustainable practices to create pieces you'll love for years to come.</p>
+             <a href="learn_more.html" class="btn btn-secondary animate-on-scroll fade-in-up" style="--delay: 0.2s;">Learn More</a>
+        </section>
+
+        <!-- Contact/Newsletter Section -->
+        <section id="contact" class="newsletter section-padding bg-light">
+            <div class="container text-center">
+                <h2 class="section-title animate-on-scroll fade-in">Stay In Touch</h2>
+                <p class="animate-on-scroll fade-in-up" style="--delay: 0.1s;">Sign up for exclusive offers, style tips, and early access to new collections.</p>
+                <form class="newsletter-form animate-on-scroll fade-in-up" style="--delay: 0.2s;">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer bg-dark">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">AURA</div>
+                <div class="footer-links">
+                    <a href="privacy_policy.html">Privacy Policy</a>
+                    <a href="terms_of_service.html">Terms of Service</a>
+                    <a href="#">Shipping & Returns</a> <!-- Keep # or link to relevant page -->
+                </div>
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram">Insta</a> <!-- Replace with actual icons later -->
+                    <a href="#" aria-label="Facebook">FB</a>
+                    <a href="#" aria-label="Pinterest">Pin</a>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2023 AURA Apparel. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

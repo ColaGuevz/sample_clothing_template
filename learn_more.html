@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story - AURA Apparel</title> <!-- Changed Title -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Add specific styles for about page layout if needed */
+        .about-banner {
+            height: 40vh; /* Adjust height */
+            min-height: 300px;
+            background: url('images/about-banner.jpg') no-repeat center center/cover; /* Add a relevant banner image */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--text-light);
+            position: relative;
+            margin-top: var(--header-height); /* Offset for fixed header */
+        }
+        .about-banner::before { /* Dark overlay */
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.4);
+            z-index: 1;
+        }
+        .about-banner-content {
+            position: relative; z-index: 2;
+        }
+         .about-banner h1 {
+            font-size: 3rem;
+            color: var(--text-light);
+         }
+
+         .about-content {
+             max-width: 800px; /* Limit text width for readability */
+             margin: 0 auto; /* Center the content */
+         }
+         .about-content img.inline-image {
+             max-width: 45%; /* Example size */
+             border-radius: 5px;
+             margin: 15px 0;
+             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+         }
+         .about-content img.float-left {
+             float: left;
+             margin-right: 25px;
+             margin-bottom: 10px;
+         }
+         .about-content img.float-right {
+             float: right;
+             margin-left: 25px;
+              margin-bottom: 10px;
+         }
+         .about-content h3 {
+             margin-top: 2em;
+             margin-bottom: 0.5em;
+             font-family: var(--font-secondary);
+             color: var(--primary-color);
+             font-size: 1.8rem;
+         }
+         .about-content p {
+             line-height: 1.7;
+             color: #555;
+         }
+         .clearfix::after { /* To contain floats */
+            content: "";
+            clear: both;
+            display: table;
+          }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container header-flex">
+            <div class="logo">
+                 <a href="index.html">AURA</a> <!-- Link back to index -->
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="Toggle Navigation">☰</button>
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="index.html#lookbook">Lookbook</a></li>
+                    <li><a href="learn-more.html">About</a></li> <!-- Active page -->
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Optional About Banner -->
+        <section class="about-banner">
+            <div class="about-banner-content animate-on-scroll fade-in">
+                <h1>Our Story</h1>
+            </div>
+        </section>
+
+        <!-- Detailed About Content Section -->
+        <section id="about-details" class="container section-padding">
+            <div class="about-content">
+                <h2 class="section-title animate-on-scroll fade-in">More Than Just Clothing</h2>
+
+                <p class="animate-on-scroll fade-in-up" style="--delay: 0.1s;">AURA was born from a simple idea: to create high-quality, thoughtfully designed apparel that blends timeless style with modern sensibilities. We believe that what you wear is an extension of who you are, and should empower you to move through your day with confidence and ease.</p>
+
+                <!-- Example with image -->
+                <div class="clearfix animate-on-scroll fade-in-up" style="--delay: 0.2s;">
+                    <img src="images/lookbook-1.jpg" alt="Detail of fabric or design process" class="inline-image float-left">
+                    <p>Our journey began with a passion for meticulous craftsmanship and a deep appreciation for natural materials. We source premium fabrics like organic cotton, breathable linen, and soft merino wool, focusing on durability and comfort. We partner with skilled artisans and ethical manufacturers who share our commitment to quality and responsible production.</p>
+                    <p>We reject fleeting trends in favor of enduring design. Our collections feature versatile pieces that can be easily integrated into your existing wardrobe, designed to be worn and loved for seasons to come.</p>
+                </div>
+
+                <h3 class="animate-on-scroll fade-in" style="--delay: 0.3s;">Our Commitment</h3>
+                <p class="animate-on-scroll fade-in-up" style="--delay: 0.4s;">Sustainability isn't just a buzzword for us; it's woven into the fabric of our brand. We strive to minimize our environmental impact through conscious material choices, reduced waste initiatives, and exploring innovative, eco-friendly practices. We believe in transparency and are continually working to improve our processes.</p>
+
+                 <!-- Example with another image -->
+                <div class="clearfix animate-on-scroll fade-in-up" style="--delay: 0.5s;">
+                    <img src="images/lookbook-2.jpg" alt="Lifestyle shot showing AURA clothing in use" class="inline-image float-right">
+                    <p>Beyond the seams, AURA is about connection. We aim to build a community around shared values of mindful consumption, personal expression, and appreciating the beauty in everyday moments. We are inspired by the diverse individuals who wear our clothes and the stories they tell.</p>
+                    <p>Thank you for joining us on this journey. Explore our collections and discover pieces that resonate with your unique style.</p>
+                </div>
+
+                <!-- Add more paragraphs, images, or sections as needed -->
+
+            </div>
+        </section>
+
+         <!-- Optional: Keep Newsletter if desired on this page too -->
+         <section id="contact-about" class="newsletter section-padding bg-light">
+            <div class="container text-center">
+                <h2 class="section-title animate-on-scroll fade-in">Connect With Us</h2>
+                <p class="animate-on-scroll fade-in-up" style="--delay: 0.1s;">Follow our journey and get style inspiration.</p>
+                <!-- Maybe just show social links here instead of newsletter form -->
+                 <div class="footer-social about-social-links animate-on-scroll fade-in-up" style="--delay: 0.2s; margin-top: 20px; color: var(--primary-color);">
+                    <a href="#" aria-label="Instagram" style="margin: 0 15px; font-size: 1.5rem;">Insta</a>
+                    <a href="#" aria-label="Facebook" style="margin: 0 15px; font-size: 1.5rem;">FB</a>
+                    <a href="#" aria-label="Pinterest" style="margin: 0 15px; font-size: 1.5rem;">Pin</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer bg-dark">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">AURA</div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Shipping & Returns</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram">Insta</a>
+                    <a href="#" aria-label="Facebook">FB</a>
+                    <a href="#" aria-label="Pinterest">Pin</a>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2023 AURA Apparel. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
