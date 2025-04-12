@@ -173,10 +173,16 @@ img {
 .main-nav ul {
     list-style: none;
     display: flex;
+    gap: 35px;       /* Controls horizontal space BETWEEN items */
+    flex-wrap: nowrap; /* Ensures items try to stay on one line */
+    padding-left: 0; /* Ensure no default list padding interferes */
+    align-items: center;
+    margin: 0;
 }
 
 .main-nav li {
-    margin-left: 30px;
+    /* This rule might be empty now, or contain other styles, */
+    /* but should NOT have margin-left or margin-top for basic spacing */
 }
 
 .main-nav a {

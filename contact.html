@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - AURA Apparel</title> <!-- Changed Title -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Add specific styles for contact page layout -->
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Default to single column */
+            gap: 50px;
+            align-items: flex-start;
+        }
+        @media (min-width: 768px) { /* Two columns on medium screens and up */
+            .contact-grid {
+                grid-template-columns: 2fr 1fr; /* Form takes more space */
+            }
+        }
+
+        .contact-form h3, .contact-details h3 {
+            font-family: var(--font-secondary);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid var(--accent-color);
+            border-radius: 4px;
+            font-family: var(--font-primary);
+            font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .form-group input[type="text"]:focus,
+        .form-group input[type="email"]:focus,
+        .form-group textarea:focus {
+             outline: none;
+             border-color: var(--secondary-color);
+             box-shadow: 0 0 0 2px rgba(140, 120, 81, 0.2);
+        }
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .contact-details p {
+            margin-bottom: 1.5em;
+            line-height: 1.7;
+            color: #555;
+        }
+        .contact-details strong { /* For labels like Email:, Phone: */
+            color: var(--primary-color);
+            margin-right: 5px;
+        }
+        .contact-details a {
+            color: var(--secondary-color);
+            text-decoration: underline;
+            text-decoration-color: rgba(140, 120, 81, 0.5);
+        }
+        .contact-details a:hover {
+            color: var(--primary-color);
+            text-decoration-color: var(--primary-color);
+        }
+        .map-placeholder { /* Optional: Style for map area */
+            background-color: var(--bg-light);
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #aaa;
+            border: 1px dashed var(--accent-color);
+            margin-top: 30px;
+            border-radius: 4px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container header-flex">
+            <div class="logo">
+                 <a href="index.html">AURA</a> <!-- Link back to index -->
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="Toggle Navigation">☰</button>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="lookbook.html">Lookbook</a></li>
+                    <li><a href="learn_more.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-title-banner" style="background: url('images/contact-banner.jpg') no-repeat center center/cover;">
+             <!-- Optional specific banner image -->
+             <div class="container text-center" style="padding: 80px 20px;"> <!-- Adjust padding if using image -->
+                 <h1 class="animate-on-scroll fade-in" style="color: var(--text-light); text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">Get In Touch</h1>
+                 <p class="animate-on-scroll fade-in" style="--delay: 0.1s; color: var(--text-light); text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">We'd love to hear from you. Send us a message or find our details below.</p>
+             </div>
+        </section>
+
+
+        <!-- Contact Grid Section -->
+        <section id="contact-main" class="container section-padding">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form animate-on-scroll fade-in-up" style="--delay: 0.2s;">
+                    <h3>Send Us a Message</h3>
+                    <form action="#" method="POST"> <!-- Add your form endpoint here -->
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+
+                <!-- Contact Details & Map -->
+                <div class="contact-details animate-on-scroll fade-in-up" style="--delay: 0.4s;">
+                    <h3>Contact Information</h3>
+                    <p>Reach out to us through any of the following methods. We aim to respond within 24-48 business hours.</p>
+                    <p>
+                        <strong>Email:</strong> <a href="mailto:hello@auraapparel.com">hello@auraapparel.com</a><br>
+                        <strong>Phone:</strong> <a href="tel:+1234567890">+1 (234) 567-890</a> (Mon-Fri, 9am-5pm EST)<br>
+                        <strong>Address:</strong> 123 Fashion Ave, Suite 404, New York, NY 10001, USA<br>
+                        <!-- Replace with your actual details -->
+                    </p>
+                     <h3>Visit Us (By Appointment)</h3>
+                     <p>Our showroom visits are available by appointment only. Please contact us to schedule.</p>
+
+                    <!-- Optional Map Placeholder -->
+                    <div class="map-placeholder">
+                        <!-- Replace this div with your Google Maps iframe embed code -->
+                        Map Area - Embed Your Map Here
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer bg-dark">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">AURA</div>
+                 <div class="footer-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                    <a href="#">Shipping & Returns</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram">Insta</a>
+                    <a href="#" aria-label="Facebook">FB</a>
+                    <a href="#" aria-label="Pinterest">Pin</a>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2023 AURA Apparel. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

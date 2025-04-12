@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title isn't strictly necessary as it's usually in a modal -->
+    <title>Quick View</title>
+    <!-- Link to main stylesheet for base styles (fonts, buttons, colors) -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Specific styles for Quick View layout -->
+    <style>
+        /* Reset body for modal context */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color, #fff); /* Use variable or fallback */
+            font-family: var(--font-primary, sans-serif);
+            color: var(--text-color, #333);
+            overflow-x: hidden; /* Prevent horizontal scroll in modal */
+        }
+
+        .quick-view-content {
+            display: grid;
+            grid-template-columns: 1fr; /* Single column on small screens */
+            gap: 25px;
+            padding: 25px;
+            max-width: 900px; /* Max width for the modal content */
+            margin: 0 auto;
+        }
+
+        /* Two columns layout for medium screens and up */
+        @media (min-width: 600px) {
+            .quick-view-content {
+                grid-template-columns: 1fr 1fr; /* Equal columns */
+                gap: 40px;
+            }
+        }
+
+        /* Images Section */
+        .quick-view-images .main-image img {
+            width: 100%;
+            height: auto;
+            max-height: 500px; /* Limit image height */
+            object-fit: contain; /* Show whole image, maybe 'cover' is better */
+            border-radius: 5px;
+            border: 1px solid var(--accent-color, #eee);
+            margin-bottom: 15px;
+        }
+
+        .thumbnail-images {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap; /* Allow thumbnails to wrap */
+            justify-content: center; /* Center thumbnails */
+        }
+
+        .thumbnail-images img {
+            width: 60px;
+            height: 80px;
+            object-fit: cover;
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 3px;
+            transition: border-color 0.3s ease;
+            opacity: 0.7;
+        }
+
+        .thumbnail-images img:hover,
+        .thumbnail-images img.active-thumb {
+            border-color: var(--secondary-color, #8c7851);
+            opacity: 1.0;
+        }
+
+        /* Details Section */
+        .quick-view-details h2 {
+            font-family: var(--font-secondary, serif);
+            font-size: 1.8rem; /* Slightly smaller than page titles */
+            margin-top: 0; /* Remove default top margin */
+            margin-bottom: 10px;
+            color: var(--primary-color, #1a1a1a);
+        }
+
+        .quick-view-details .price {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--secondary-color, #8c7851);
+            margin-bottom: 15px;
+        }
+
+        .quick-view-details .description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* Options Styling */
+        .options .form-group {
+            margin-bottom: 15px;
+        }
+
+        .options label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #444;
+        }
+
+        .options select,
+        .options input[type="number"] {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--accent-color, #ccc);
+            border-radius: 4px;
+            font-family: var(--font-primary, sans-serif);
+            font-size: 0.95rem;
+            box-sizing: border-box; /* Include padding in width */
+        }
+         .options select {
+             cursor: pointer;
+         }
+
+        .options input[type="number"] {
+            width: 80px; /* Smaller width for quantity */
+        }
+
+        .options select:focus,
+        .options input[type="number"]:focus {
+             outline: none;
+             border-color: var(--secondary-color, #8c7851);
+             box-shadow: 0 0 0 2px rgba(140, 120, 81, 0.2);
+        }
+
+        /* Add to Cart Button */
+        .add-to-cart-btn {
+            width: 100%;
+            padding: 15px; /* Make button larger */
+            margin-top: 15px;
+            font-size: 1rem;
+        }
+
+        /* View Full Details Link */
+        .view-full-details {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: var(--text-color, #333);
+            text-decoration: underline;
+        }
+        .view-full-details:hover {
+            color: var(--secondary-color, #8c7851);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="quick-view-content">
+        <!-- Product Images Column -->
+        <div class="quick-view-images">
+            <div class="main-image">
+                <!-- Main product image - SRC would be dynamic -->
+                <img id="quick-view-main-img" src="images/placeholder-product-1.jpg" alt="Product Name Placeholder">
+            </div>
+            <div class="thumbnail-images">
+                <!-- Thumbnail images - SRCs would be dynamic -->
+                <img src="images/placeholder-product-1.jpg" alt="Thumbnail 1" class="active-thumb" data-fullimg="images/placeholder-product-1.jpg">
+                <img src="images/placeholder-product-2.jpg" alt="Thumbnail 2" data-fullimg="images/placeholder-product-2.jpg">
+                <img src="images/placeholder-product-3.jpg" alt="Thumbnail 3" data-fullimg="images/placeholder-product-3.jpg">
+                <!-- Add more thumbnails if the product has them -->
+            </div>
+        </div>
+
+        <!-- Product Details Column -->
+        <div class="quick-view-details">
+            <!-- Product Title - Content dynamic -->
+            <h2>Essential Crew Neck</h2>
+
+            <!-- Product Price - Content dynamic -->
+            <p class="price">$45.00</p>
+
+            <!-- Product Description - Content dynamic -->
+            <p class="description">
+                A timeless staple crafted from premium, soft-touch organic cotton. Features a classic fit and durable construction for everyday wear.
+            </p>
+
+            <!-- Product Options Form -->
+            <form class="options" action="/cart/add" method="post"> <!-- Example action -->
+                <!-- Hidden input for product ID/variant ID - Value dynamic -->
+                <input type="hidden" name="id" value="VARIANT_ID_PLACEHOLDER">
+
+                <!-- Size Options (Example) - Options dynamic -->
+                <div class="form-group">
+                    <label for="qv-size">Size:</label>
+                    <select id="qv-size" name="properties[Size]"> <!-- Check name attribute needed by your platform -->
+                        <option value="S">Small</option>
+                        <option value="M">Medium</option>
+                        <option value="L">Large</option>
+                        <option value="XL">X-Large</option>
+                    </select>
+                </div>
+
+                <!-- Color Options (Example) - Options dynamic -->
+                <div class="form-group">
+                    <label for="qv-color">Color:</label>
+                    <select id="qv-color" name="properties[Color]">
+                        <option value="Black">Black</option>
+                        <option value="White">White</option>
+                        <option value="Grey">Grey</option>
+                    </select>
+                </div>
+
+                <!-- Quantity -->
+                <div class="form-group">
+                     <label for="qv-quantity">Quantity:</label>
+                     <input type="number" id="qv-quantity" name="quantity" value="1" min="1">
+                </div>
+
+                <!-- Add to Cart Button -->
+                <!-- Type might be 'submit' if using the form, or 'button' if handled by JS -->
+                <button type="submit" class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+            </form>
+
+            <!-- Link to Full Product Page - HREF dynamic -->
+            <a href="product-detail-page.html" class="view-full-details">View Full Product Details</a>
+
+        </div>
+    </div>
+
+    <!-- Minimal JS for Thumbnail Interaction -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mainImg = document.getElementById('quick-view-main-img');
+            const thumbnails = document.querySelectorAll('.thumbnail-images img');
+
+            thumbnails.forEach(thumb => {
+                thumb.addEventListener('click', function() {
+                    // Get the full image source from the data attribute
+                    const fullImgSrc = this.getAttribute('data-fullimg');
+                    if (mainImg && fullImgSrc) {
+                        mainImg.src = fullImgSrc;
+                        // Optionally update alt text
+                        mainImg.alt = this.alt.replace('Thumbnail', 'Product View');
+
+                        // Update active state
+                        thumbnails.forEach(t => t.classList.remove('active-thumb'));
+                        this.classList.add('active-thumb');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

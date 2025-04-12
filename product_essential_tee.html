@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- *** CHANGE THIS TITLE FOR EACH PRODUCT *** -->
+    <title>Essential Crew Neck - AURA Apparel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- Link to main stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Add specific styles for Product Detail Page layout -->
+    <!-- (It's better to move these to style.css under specific classes) -->
+    <style>
+        .product-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Single column default */
+            gap: 30px;
+            padding-top: 20px; /* Add some space below header */
+        }
+
+        @media (min-width: 768px) {
+            .product-detail-grid {
+                grid-template-columns: 1fr 1fr; /* Two columns on larger screens */
+                gap: 50px;
+            }
+        }
+
+        /* Images Section */
+        .product-images .main-image img {
+            width: 100%;
+            height: auto;
+            max-height: 600px; /* Max height */
+            object-fit: cover; /* Or 'contain' */
+            border-radius: 5px;
+            border: 1px solid var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        .product-images .thumbnail-images {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: flex-start; /* Align thumbs left */
+        }
+
+        .product-images .thumbnail-images img {
+            width: 70px; /* Slightly larger thumbs */
+            height: 90px;
+            object-fit: cover;
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 3px;
+            transition: border-color 0.3s ease;
+            opacity: 0.7;
+        }
+
+        .product-images .thumbnail-images img:hover,
+        .product-images .thumbnail-images img.active-thumb {
+            border-color: var(--secondary-color);
+            opacity: 1.0;
+        }
+
+        /* Details Section */
+        .product-info h1 { /* Use h1 for product title on its own page */
+            font-family: var(--font-secondary);
+            font-size: 2.2rem;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .product-info .price {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .product-info .description {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 25px;
+        }
+        .product-info .description p { /* Ensure paragraphs have margin */
+             margin-bottom: 1em;
+        }
+
+        /* Options Styling (can reuse quick view styles if moved to style.css) */
+        .product-info .options .form-group { margin-bottom: 18px; }
+        .product-info .options label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; color: #444; }
+        .product-info .options select,
+        .product-info .options input[type="number"] { width: 100%; padding: 12px; border: 1px solid var(--accent-color); border-radius: 4px; font-family: var(--font-primary); font-size: 1rem; box-sizing: border-box; }
+        .product-info .options select { cursor: pointer; max-width: 200px; /* Limit width */ }
+        .product-info .options input[type="number"] { width: 80px; }
+        .product-info .options select:focus,
+        .product-info .options input[type="number"]:focus { outline: none; border-color: var(--secondary-color); box-shadow: 0 0 0 2px rgba(140, 120, 81, 0.2); }
+
+        /* Add to Cart Button */
+        .product-info .add-to-cart-btn { width: 100%; max-width: 300px; /* Limit button width */ padding: 15px; margin-top: 20px; font-size: 1rem; }
+
+    </style>
+</head>
+<body>
+
+    <!-- ### STANDARD HEADER (Copy from index.html) ### -->
+    <header class="site-header">
+        <div class="container header-flex">
+            <div class="logo">
+                 <a href="index.html">AURA</a>
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="Toggle Navigation">☰</button>
+                 <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="lookbook.html">Lookbook</a></li>
+                    <li><a href="learn-more.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ### PRODUCT DETAIL SECTION ### -->
+        <section id="product-detail" class="container section-padding">
+            <div class="product-detail-grid">
+
+                <!-- == IMAGES COLUMN == -->
+                <div class="product-images animate-on-scroll fade-in">
+                    <div class="main-image">
+                        <!-- *** CHANGE Main Image SRC and ALT *** -->
+                        <img id="product-main-img" src="images/placeholder-product-1.jpg" alt="Essential Crew Neck - Black">
+                    </div>
+                    <div class="thumbnail-images">
+                        <!-- *** CHANGE/ADD/REMOVE Thumbnail SRCs, ALT, and data-fullimg *** -->
+                        <img src="images/placeholder-product-1.jpg" alt="Essential Crew Neck Thumbnail 1" class="active-thumb" data-fullimg="images/placeholder-product-1.jpg">
+                        <img src="images/product-1-thumb-2.jpg" alt="Essential Crew Neck Thumbnail 2" data-fullimg="images/product-1-view-2.jpg">
+                        <img src="images/product-1-thumb-3.jpg" alt="Essential Crew Neck Thumbnail 3" data-fullimg="images/product-1-view-3.jpg">
+                        <!-- Add more thumbnails for this specific product -->
+                    </div>
+                </div>
+
+                <!-- == INFO COLUMN == -->
+                <div class="product-info animate-on-scroll fade-in-up" style="--delay: 0.1s;">
+                    <!-- *** CHANGE Product Title *** -->
+                    <h1>Essential Crew Neck</h1>
+
+                    <!-- *** CHANGE Product Price *** -->
+                    <p class="price">$45.00</p>
+
+                    <!-- *** CHANGE Product Description *** -->
+                    <div class="description">
+                         <p>A timeless staple crafted from premium, soft-touch organic cotton. Features a classic fit that's comfortable yet refined, perfect for layering or wearing on its own.</p>
+                         <p>Durable construction ensures it holds up wash after wash. Ethically sourced materials.</p>
+                         <!-- Add more paragraphs if needed -->
+                    </div>
+
+                    <!-- Product Options Form -->
+                    <form class="options" action="#" method="post"> <!-- Form action likely won't work without backend -->
+                        <!-- You might not need hidden ID if Add to Cart is non-functional -->
+                        <!-- <input type="hidden" name="id" value="PRODUCT_SKU_OR_ID"> -->
+
+                        <!-- *** CHANGE/ADD/REMOVE Size Options *** -->
+                        <div class="form-group">
+                            <label for="prod-size">Size:</label>
+                            <select id="prod-size" name="properties[Size]">
+                                <option value="S">Small</option>
+                                <option value="M">Medium</option>
+                                <option value="L">Large</option>
+                                <option value="XL">X-Large</option>
+                            </select>
+                        </div>
+
+                        <!-- *** CHANGE/ADD/REMOVE Color Options *** -->
+                        <div class="form-group">
+                            <label for="prod-color">Color:</label>
+                            <select id="prod-color" name="properties[Color]">
+                                <option value="Black">Black</option>
+                                <option value="White">White</option>
+                                <option value="Heather Grey">Heather Grey</option>
+                            </select>
+                        </div>
+
+                        <!-- Quantity -->
+                        <div class="form-group">
+                             <label for="prod-quantity">Quantity:</label>
+                             <input type="number" id="prod-quantity" name="quantity" value="1" min="1">
+                        </div>
+
+                        <!-- Add to Cart Button (May be non-functional without JS/Backend) -->
+                        <button type="submit" class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Optional: Related Products Section -->
+        <!-- You could manually add links or a grid here -->
+
+    </main>
+
+    <!-- ### STANDARD FOOTER (Copy from index.html) ### -->
+    <footer class="site-footer bg-dark">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">AURA</div>
+                 <div class="footer-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                    <a href="#">Shipping & Returns</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram">Insta</a>
+                    <a href="#" aria-label="Facebook">FB</a>
+                    <a href="#" aria-label="Pinterest">Pin</a>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2023 AURA Apparel. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Link to main JS file -->
+    <script src="script.js"></script>
+
+    <!-- Inline JS for Thumbnail Interaction specific to THIS page -->
+    <!-- (Or move this logic into script.js, making it more general) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Make sure this code runs only if the elements exist on the current page
+            const mainImg = document.getElementById('product-main-img');
+            const thumbnails = document.querySelectorAll('#product-detail .thumbnail-images img'); // Scope selector
+
+            if(mainImg && thumbnails.length > 0) {
+                thumbnails.forEach(thumb => {
+                    thumb.addEventListener('click', function() {
+                        const fullImgSrc = this.getAttribute('data-fullimg');
+                        if (fullImgSrc) {
+                            mainImg.src = fullImgSrc;
+                            mainImg.alt = this.alt.replace('Thumbnail', 'Main View'); // Update alt text
+
+                            // Update active state
+                            thumbnails.forEach(t => t.classList.remove('active-thumb'));
+                            this.classList.add('active-thumb');
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
